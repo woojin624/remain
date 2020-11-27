@@ -1,0 +1,98 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@font-face {
+    font-family: 'Neue-Pixel-Grotesk';
+    src: url('./font/Neue-Pixel-Grotesk.eot');
+    src: url('./font/Neue-Pixel-Grotesk.eot?#iefix') format('embedded-opentype'),
+         url('./font/Neue-Pixel-Grotesk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+@font-face {
+    font-family: 'NeuePixelGrotesk';
+    src: url('./font/NeuePixelGrotesk.svg#NeuePixelGrotesk') format('svg'),
+         url('./font/NeuePixelGrotesk.ttf') format('truetype'),
+         url('./font/NeuePixelGrotesk.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'NONNaturalGrotesk_TrialVersion-Regular';
+    src: url('./font/NONNaturalGrotesk_TrialVersion-Regular.eot');
+    src: url('./font/NONNaturalGrotesk_TrialVersion-Regular.eot?#iefix') format('embedded-opentype'),
+         url('./font/NONNaturalGrotesk_TrialVersion-Regular.svg#NONNaturalGrotesk_TrialVersion-Regular') format('svg'),
+         url('./font/NONNaturalGrotesk_TrialVersion-Regular.ttf') format('truetype'),
+         url('./font/NONNaturalGrotesk_TrialVersion-Regular.woff') format('woff'),
+         url('./font/NONNaturalGrotesk_TrialVersion-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* :lang(ko) {font-family:'Noto Sans KR', sans-serif;} */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+     vertical-align: baseline;
+     cursor: none;
+     vertical-align: baseline;
+     text-decoration: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+* {
+     box-sizing: border-box;
+ }
+
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.cursor{
+     position: fixed;
+     width: 50px;
+     height: 50px;
+     /* background-image: url("cursor/cursor.png"); */
+     background-image: url("./cursor/cursor.png");
+     background-size: auto;
+     pointer-events: none;
+     z-index: 10000;
+     transition: transform 0.2s;
+}

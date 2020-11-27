@@ -1,0 +1,43 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  width: 60vw;
+  height: 60vh;
+}
+ul.students {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+ul.students > li {
+  width: 135px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+ul.students > li > img {
+  width: 135px;
+  height: 180px;
+}
+ul.students > li > p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+ul.detail {
+  display: flex;
+  list-style: none;
+}
+
+ul.detail > li {
+  margin: 8px;
+  font-size: 24px;
+  cursor: pointer;
+}

@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+  }
+
+  button {cursor: none;}
+  body {
+    height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  section.threeline {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-self: flex-end;
+    margin-bottom: 50px;
+    position: relative;
+    /* display: none; */
+  }
+  
+  section.threeline > article.text-line {
+    padding: 35px 0 20px 0;
+    width: max-content;
+    position: relative;
+  }
+  section.threeline > article.text-line > .list-wrap {
+    position: relative;
+    animation: threelineMove 30s linear infinite alternate;
+  }
+  section.threeline > article > .list-wrap > span {
+    font-size: 100px;
+    font-weight: 500;
+    margin: 30px;
+    word-spacing: -6px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight: 400;
+  }
+  section.threeline > article > .list-wrap > span > sup {
+    vertical-align: top;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 0;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  section.threeline > div.text-underline {
+    height: 3px;
+    background-color: rgb(123, 123, 123);
+    margin: 0 20px;
+  }
+  
+  section.team-initial {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+  }
+  
+  @keyframes threelineMove {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -79%;
+    }
+  }
+  
+  section.all-list {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-self: flex-end;
+    margin-bottom: 50px;
+    position: relative;
+    display: none;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  section.all-list > ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    padding: 0 2rem;
+  }
+  section.all-list > ul > li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    margin: 0.6rem 0;
+    width: 16rem;
+  }
+  section.all-list > ul > li > sup {
+    vertical-align: top;
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 0;
+  }
+
+  
+  header {
+    width: 100%;
+    padding: 22px 44px;
+    position: fixed;
+    z-index: 9999;
+  }
+  header > nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: "Noto Sans CJK KR";
+    font-size: 15px;
+    line-height: 21px;
+    padding: 22px 0 0 44px;
+  }
+  
+  header > nav > div {
+    display: flex;
+  }
+
+  header > nav > div.nav-left > ul {
+    margin-left: 6rem;
+  }
+  
+  header > nav > div.nav-left > ul.grade > li {
+    opacity: 0.5;
+  }
+  
+  header > nav > div.nav-left > ul.grade {
+    display: none;
+  }
+  header > nav > div.nav-left > ul.field {
+    display: none;
+  }
+  header > nav > div.nav-left > ul.field > li {
+    opacity: 0.5;
+  }
+  header > nav > div.nav-left > ul.field > li > sup {
+    vertical-align: super;
+    font-size: smaller;
+    line-height: 0;
+  }
+  header > nav > div.nav-left > .view-list > li {
+    opacity: 0.5;
+  }
+  
+  div.hamburger {
+    position: absolute;
+    top: 22px;
+    right: 44px;
+    width: 22px;
+    height: 22px;
+    z-index: 9;
+  }
+  div.hamburger > span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    top: 7px;
+    transition: 0.3s;
+  }
+  div.hamburger > span:last-child {
+    top: 14px;
+  }
+  
+  .hamburger.active span {
+    background-color: #000;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 8px;
+  }
+  .hamburger.active span:nth-child(2) {
+    transform: rotate(45deg);
+    top: 8px;
+  }
+  
+  /* menu */
+  header > div.menu {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: #fff;
+    overflow: hidden;
+    text-decoration: none;
+    opacity: 0;
+    z-index: 5;
+    font-family: 'NONNaturalGrotesk_TrialVersion-Regular';
+  }
+  header > div.menu > ol.menu-list {
+    width: 200%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header > div.menu > ol.menu-list a {
+    flex: 1;
+  }
+  header > div.menu > ol.menu-list a li {
+    width: 100%;
+    height: 100%;
+    font-family: "NONNaturalGrotesk_TrialVersion-Regular";
+    font-size: 128px;
+    line-height: 190px;
+    border: 2px solid #000;
+    padding-left: 53px;
+    color: #000000;
+  }
+  header > div.menu > ol.menu-list a li:hover {
+    font-family: "NeuePixelGrotesk";
+    background-color: #000000;
+    font-style: italic;
+    color: #fff;
+  }
+  /* overlay */
+  .menu.visible {
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .nav-active {
+    opacity: 1 !important;
+  }
+  
+
+/* project */
+div.project-viewer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    /* position: absolute;
+    left: 100vw; */
+    position: fixed;
+    transform:translateX(100%);
+    background-color: #fff;
+    z-index: 1000;
+    transition: 0.4s;    
+    -ms-overflow-style: none; 
+    font-family:'Noto Sans KR', sans-serif;
+    overflow: hidden;
+  } 
+      
+  /* ::-webkit-scrollbar { 
+      display: none;
+  } */
+  div.project-viewer > section {
+    width: 50vw;
+    height: 100%;
+  }
+  .back-btn {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    opacity: 0;
+    padding: 10px;
+  }
+  /* 왼쪽 팀, 프로젝트 소개 영역 */
+  section.pro-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height:100vh;
+    padding-bottom: 22px;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  section.pro-info > div.pro-info-top > div.page-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 85px;
+    color: #b1b1b1;
+    padding: 0 44px;
+  }
+  
+  section.pro-info > div.pro-info-top > div.member {
+    margin-top: 15px;
+    display: flex;
+  }
+  /* section.pro-info > div.member > div.row {} */
+  section.pro-info > div.pro-info-top > div.member > ul.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  section.pro-info > div.pro-info-top > div.member > ul.row > li {
+    width: 10vw;
+    height: 10vw;
+    min-width: 120px;
+    min-height: 120px;
+    background-color: #fff;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 15px;
+    position: relative;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > a > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* section.pro-info > div.pro-info-top > div.member > ul.row > li {} */
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > span:nth-child(1) {
+    line-height: 1.7em;
+    font-family:'Noto Sans KR', sans-serif;
+    flex: 1;
+  }
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > span:nth-child(2) {
+    line-height: 1.7em;
+    font-family:'Noto Sans KR', sans-serif;
+    vertical-align: bottom;
+  }
+  
+  section.pro-info > div.pro-info-top > div.pro-detail {
+    padding-left: 44px;
+    margin-top: 20px;
+    font-family:'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+  }
+  section.pro-info > div.pro-info-top > div.pro-detail > p {
+    font-size: 13px;
+    color: #bfbfbf;
+    line-height: 1.5em;
+  }
+  
+  section.pro-info > div.pro-intro {
+    display: flex;
+    flex-direction: column;
+    padding: 0 44px;
+  }
+  section.pro-info > div.pro-intro > button.web-btn {
+    border: 1px solid #000;
+    width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+  }
+  section.pro-info > div.pro-intro > button.web-btn > a {
+    color: #000;
+    
+  }
+
+  div.title-info { display: flex; flex-direction: column;}
+  section.pro-info > div.pro-intro > div.title-info > span.team-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 13px;
+    font-family: 'NONNaturalGrotesk_TrialVersion-Regular';
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  section.pro-info > div.pro-intro > div.title-info > h2 {
+    font-size: 98px;
+    font-weight:500;
+    line-height: 98px;
+    margin-top: 27px;
+    letter-spacing: -2px;
+    font-family: 'NONNaturalGrotesk_TrialVersion-Regular';
+    
+  }
+  section.pro-info > div.pro-intro > span.slogan {
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 30px;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  section.pro-info > div.pro-intro > p.summary {
+    font-size: 17px;
+    line-height: 26px;
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  
+  /* 오른쪽 프로젝트 썸네일 영역 */
+  section.pro-view {
+    border-left: 1px solid #000;
+    overflow: hidden;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+  }
+  section.pro-view > div.major {
+    position: relative;
+    margin-top: 69px;
+    display: flex;
+    animation: goLeft 3s linear infinite;
+    margin-bottom: 15px;
+  }
+  section.pro-view > div.major > div {
+    width: 140px;
+    margin: 0 15px;
+    white-space: nowrap;
+  }
+  
+  section.pro-view > div.pro-thumb {
+    width: 100%;
+    /* position: absolute; */
+    /* bottom:0; */
+  }
+  section.pro-view > div.pro-thumb > div.pro-thumb-wrap {
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    font-family: 'NONNaturalGrotesk_TrialVersion-Regular';
+    /* animation: goImgLeft 7s linear infinite forwards; */
+  }
+  section.pro-view > div.pro-thumb > div.pro-thumb-wrap > img {
+    height: 100%;
+    /* width:50vw;
+    height:50vw; */
+    /* position: absolute;
+    left: 0; */
+  }
+
+  div.black-line { display: none; }
+  div.mHeader {display: none;}
+  div.mWebbtn{display: none;}
+  
+  @keyframes goLeft {
+    0% {
+      left: -166.95px;
+    }
+    100% {
+      left: -333.9px;
+    }
+  }
+
+/* @keyframes goImgLeft{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(-91.3vw);
+  }
+} */
+
+/* media */
+
+@media screen and (max-width: 480px){
+  
+  /* display:none */
+  html {position:absolute;Top:0; right:0; bottom:0; left:0;  overflow-x: hidden;}
+  body { overflow-x: hidden; overflow-y: scroll; width: 100vw; height: fit-content; }
+  div.cursor { display: none; }
+  .team-initial { display: none;}
+  .ul.grade { display:block; }
+  .ul.filed { display:block; }
+  section.threeline{ display:none; }
+  .nav-left { display: none;}
+  .hamburger { display: none;}
+
+  section.pro-view > div.major { display: none;}
+  section.pro-info > div.pro-intro > button.web-btn { display: none;}
+  
+  /* all-list */
+  section.all-list{
+    display:flex;
+    align-self: flex-start;
+    height: fit-content;
+  }
+  section.all-list > ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 2rem 0;
+    height: auto;
+  }
+  section.all-list > ul > li {
+    font-size: 30px;
+    width: 100%;
+    height: auto;
+  }
+
+  /* back btn */
+  .back-btn { top: 10px; left: 3px;}
+  .back-btn > img { width: 20px; }
+
+  /* info layout */
+  section.pro-info  { display: flex; flex-direction:column-reverse; width: 100vw; }
+  section.pro-info > div.pro-intro {flex-direction: column-reverse; padding: 0 20px; height: auto;}
+
+  /* order */
+  div.title-info { display: flex; flex-direction: column-reverse; margin-top: 20px; position: relative; }
+  div.title-info { order: 1;}
+  section.pro-info > div.pro-intro > span.slogan  { order: 0;}
+  section.pro-info > div.pro-intro > p.summary {order:-1;}
+
+  
+  section.pro-info > div.pro-intro > div.title-info > h2 { font-size: 33px; line-height: 40px; letter-spacing: 0; font-family:'Noto Sans KR', sans-serif; margin: 0; }
+  section.pro-info > div.pro-intro > span.team-name { font-size: 15px; line-height: 20px; margin-top: 15px;} 
+  section.pro-info > div.pro-intro > span.slogan {
+    font-size: 16px; line-height: 20px; margin: 30px 0 20px 0 ;  }
+  section.pro-info > div.pro-intro > p.summary {
+    font-size: 13px; line-height: 20px; font-family:'Noto Sans KR', sans-serif; color: #777777;  }
+  section.pro-info > div.pro-info-top > div.pro-detail {
+    padding: 20px; }
+  section.pro-info > div.pro-info-top > div.pro-detail > p {
+    color: #000;  font-size: 12px; line-height: 15px; }
+  section.pro-info > div.pro-info-top { display:flex; flex-direction: column-reverse; /*  */height: auto;}
+
+  /* project viewer */
+  div.project-viewer { flex-direction: column-reverse; height:fit-content; position:absolute; top:0;left:0;transform:translateX(100%); overflow-y:auto; -webkit-overflow-scrolling: touch; margin-top: 60px; } 
+  div.project-viewer > section { width: 100vw; height: auto;}
+  div.project-viewer > section.pro-view { height: 100vw; width: 100vw; display: unset; overflow: visible;}
+  
+
+
+  /* thumb */
+  section.pro-view > div.pro-thumb { height: 100%; }
+  section.pro-view > div.pro-thumb > div.pro-thumb-wrap { 
+    width: 100vw; height: 375px;}  
+
+  /* web */
+  div.mWebbtn{display: block; position: absolute; right: 0; top: 12px;}
+
+  /* line */
+  div.black-line { display: block; width: 95%; margin: 0 auto
+    ; height: 56px; border-bottom: 1px solid #707070;}
+
+  section.pro-info > div.pro-info-top > div.page-btn { display: none;}
+
+  /* header */
+  div.mHeader  {display: block; margin-top: 50px;}
+  div.mHeader > ul { display: flex; flex-direction: row; padding-left: 20px; height: auto;}
+  div.mHeader > ul > li { flex: 1; font-size: 12.5px; height: 33px; line-height: 18px; height: auto; }
+  div.mHeader > ul > li:nth-child(1) {font-family: 'NONNaturalGrotesk_TrialVersion-Regular';}
+  div.mHeader > ul > li:nth-child(2) {font-family:'Noto Sans KR', sans-serif; }
+  div.black-line2 { display: block; width: 90%; margin: 0 auto
+    ; height: 25px; border-bottom: 1px solid #707070;}
+
+  /* member */
+  section.pro-info > div.pro-info-top > div.member > ul.row > li {
+    width: 125px;
+    height: 126px;
+    border: 1px solid #fff;
+  }
+  section.pro-info > div.pro-info-top > div.member > ul.row > li:nth-child(5), section.pro-info > div.pro-info-top > div.member > ul.row > li:nth-child(4) { margin-top: 36px;}
+
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > span.member-name { color: #fff;
+    z-index: 2; font-size: 10px; position: absolute; top: 6px; }
+
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > span.member-major { position: absolute; top: 126px; font-size: 10px; line-height: 20px;}
+  section.pro-info > div.pro-info-top > div.member {height: auto;}
+}
+
+@media screen and (max-width: 360px){
+  section.pro-info > div.pro-info-top > div.member > ul.row > li {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #fff;
+  }
+ }
+
+ @media screen and (device-width: 414px) {
+  section.pro-info > div.pro-info-top > div.member > ul.row > li {
+    width: 138px;
+    height: 138px;
+    border: 1px solid #fff;
+  }
+  section.pro-info > div.pro-info-top > div.member > ul.row > li > span.member-major {
+    position: absolute;
+    top: 140px;
+    font-size: 10px;
+    line-height: 20px;
+  }
+ }
